@@ -1,7 +1,7 @@
 # Design Document: Srujan Kothuri's Personal Homepage
 
 **Author:** Srujan Kothuri
-**Course:** Web Development, Northeastern University
+**Course:** [CS 5610 Web Development (Online), Northeastern University, Fall 2026](https://johnguerra.co/classes/webDevelopment_online_fall_2026/)
 **Project:** Project 1, Personal Homepage
 **Live site:** https://srujankothuri.github.io/srujanhomepage/
 

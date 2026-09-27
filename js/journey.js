@@ -218,7 +218,7 @@ export function renderJourney(container) {
     if (current === -1) {
       return;
     }
-    let next = current;
+    let next;
     if (event.key === "ArrowDown") {
       next = Math.min(current + 1, buttons.length - 1);
     } else if (event.key === "ArrowUp") {

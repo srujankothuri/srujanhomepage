@@ -1,0 +1,390 @@
+/* ===== Beyond Code page ===== */
+/* Page-specific styles. Shared variables and components live in style.css. */
+
+.beyond-page {
+  --tile-bg: rgba(22, 27, 34, 0.72);
+  --glow: rgba(63, 185, 80, 0.55);
+  --spot: rgba(63, 185, 80, 0.1);
+}
+
+/* ===== Animated background ===== */
+.beyond-page::before {
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  content: "";
+  background:
+    radial-gradient(
+      40% 35% at 20% 25%,
+      rgba(63, 185, 80, 0.14),
+      transparent 70%
+    ),
+    radial-gradient(
+      35% 30% at 80% 20%,
+      rgba(167, 139, 250, 0.12),
+      transparent 70%
+    ),
+    radial-gradient(
+      40% 35% at 60% 80%,
+      rgba(45, 212, 191, 0.1),
+      transparent 70%
+    );
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .beyond-page::before {
+    animation: drift 24s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes drift {
+  to {
+    transform: translate(4%, -3%) rotate(6deg);
+  }
+}
+
+/* The shared header is solid, so let the background show through a little. */
+.beyond-page .site-header {
+  background-color: rgba(13, 17, 23, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* ===== Gradient heading ===== */
+.beyond-title {
+  background: linear-gradient(
+    90deg,
+    var(--color-accent),
+    var(--branch-research),
+    var(--branch-main),
+    var(--color-accent)
+  );
+  background-size: 300% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .beyond-title {
+    animation: shimmer 10s linear infinite;
+  }
+}
+
+@keyframes shimmer {
+  to {
+    background-position: 300% 0;
+  }
+}
+
+/* ===== Bento grid ===== */
+.bento-section {
+  padding-bottom: var(--space-xl);
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-areas:
+    "movies movies boston boston"
+    "movies movies boston boston"
+    "court court stands stats"
+    "tinker hack hack stats";
+  gap: var(--space-md);
+}
+
+.tile--movies {
+  grid-area: movies;
+}
+
+.tile--boston {
+  grid-area: boston;
+}
+
+.tile--court {
+  grid-area: court;
+}
+
+.tile--stands {
+  grid-area: stands;
+}
+
+.tile--stats {
+  grid-area: stats;
+}
+
+.tile--tinker {
+  grid-area: tinker;
+}
+
+.tile--hack {
+  grid-area: hack;
+}
+
+/* ===== Glass tiles with a cursor-following border and spotlight ===== */
+.tile {
+  --spot-x: 50%;
+  --spot-y: 50%;
+  position: relative;
+  overflow: hidden;
+  padding: var(--space-md);
+  background:
+    linear-gradient(var(--tile-bg), var(--tile-bg)) padding-box,
+    radial-gradient(
+        320px circle at var(--spot-x) var(--spot-y),
+        var(--glow),
+        var(--color-border) 45%
+      )
+      border-box;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  backdrop-filter: blur(14px);
+}
+
+.tile::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: radial-gradient(
+    280px circle at var(--spot-x) var(--spot-y),
+    var(--spot),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.tile:hover::before {
+  opacity: 1;
+}
+
+.tile__eyebrow {
+  margin: 0 0 0.25rem;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.tile__title {
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.tile__subtitle {
+  margin: var(--space-md) 0 var(--space-xs);
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 400;
+}
+
+.tile__text {
+  margin: 0 0 var(--space-sm);
+  color: var(--color-muted);
+}
+
+.tile__list {
+  display: grid;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.9375rem;
+}
+
+.tile__list li {
+  display: flex;
+  gap: var(--space-xs);
+}
+
+.tile__list li::before {
+  flex-shrink: 0;
+  content: ">";
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+}
+
+/* ===== Movie ticket ===== */
+.ticket {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  padding: 0;
+}
+
+.ticket__main {
+  padding: var(--space-lg);
+}
+
+.ticket__stub {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0 var(--space-md);
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.3em;
+  writing-mode: vertical-rl;
+  border-left: 2px dashed var(--color-border);
+}
+
+.genre-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.genre-list li {
+  padding: 0.125rem 0.625rem;
+  color: var(--branch-personal);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  border: 1px solid var(--branch-personal);
+  border-radius: 999px;
+}
+
+.film-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  line-height: 1.8;
+}
+
+.film-list li::marker {
+  color: var(--color-muted);
+}
+
+.ticket__last {
+  margin: var(--space-md) 0 0;
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}
+
+.ticket__film {
+  color: var(--color-text);
+  font-family: var(--font-mono);
+}
+
+.ticket__count {
+  margin: var(--space-md) 0 0;
+  color: var(--color-muted);
+}
+
+.ticket__number {
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+/* ===== Boston ===== */
+.tile__photo {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  margin-bottom: var(--space-md);
+  object-fit: cover;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-sm);
+}
+
+.spot-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.spot-list li {
+  padding: 0.25rem 0.625rem;
+  font-size: 0.8125rem;
+  background-color: rgba(45, 212, 191, 0.1);
+  border: 1px solid rgba(45, 212, 191, 0.35);
+  border-radius: var(--radius-sm);
+}
+
+/* ===== Quick stats ===== */
+.stats {
+  display: grid;
+  gap: var(--space-md);
+  margin: 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.stat__value {
+  margin: 0;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.stat__label {
+  color: var(--color-muted);
+  font-size: 0.8125rem;
+}
+
+/* ===== Scroll reveal (only when JavaScript has turned it on) ===== */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-ready .tile {
+    opacity: 0;
+    transform: translateY(16px);
+    transition:
+      opacity 0.6s ease var(--reveal-delay, 0ms),
+      transform 0.6s ease var(--reveal-delay, 0ms);
+  }
+
+  .reveal-ready .tile.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 64rem) {
+  .bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-areas:
+      "movies movies"
+      "boston boston"
+      "court court"
+      "stands stats"
+      "tinker stats"
+      "hack hack";
+  }
+
+  .tile__photo {
+    aspect-ratio: 21 / 9;
+  }
+}
+
+@media (max-width: 40rem) {
+  .bento {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "movies"
+      "boston"
+      "court"
+      "stands"
+      "hack"
+      "tinker"
+      "stats";
+  }
+
+  .ticket__main {
+    padding: var(--space-md);
+  }
+}

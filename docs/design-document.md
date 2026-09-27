@@ -151,7 +151,7 @@ Together, they cover the full range of the site's audience, from expert to non-t
 
 - The hero stacks vertically, with full-width buttons that are easy to tap.
 - Navigation stays visible as three short links, since a hamburger menu would add an extra tap for only three pages.
-- The details panel opens directly under the tapped commit, like an accordion.
+- The details panel appears below the graph. The original plan was an accordion that opened under each tapped commit, but that pushed the rows below it down, while the graph's lines are drawn at fixed row positions. Placing the panel below the graph keeps every line aligned with its commit.
 
 ### Projects page (desktop)
 

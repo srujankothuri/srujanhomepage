@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Srujan Kothuri" />
+    <meta
+      name="description"
+      content="Srujan Kothuri, MS CS student at Northeastern. My journey, projects, and what I'm up to."
+    />
+    <title>Srujan Kothuri</title>
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="js/main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="site-nav container" aria-label="Main">
+        <a
+          class="site-nav__logo"
+          href="index.html"
+          aria-label="Srujan Kothuri, home"
+          >SK_</a
+        >
+        <ul class="site-nav__links">
+          <li>
+            <a class="site-nav__link" href="index.html" aria-current="page"
+              >~/home</a
+            >
+          </li>
+          <li>
+            <a class="site-nav__link" href="projects.html">~/projects</a>
+          </li>
+          <li>
+            <a class="site-nav__link" href="beyond-code.html">~/beyond-code</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero container" aria-labelledby="hero-title">
+        <div class="hero__text">
+          <p class="hero__prompt" aria-hidden="true">~ $ whoami</p>
+          <h1 class="hero__title" id="hero-title">
+            Srujan Kothuri<span class="hero__cursor" aria-hidden="true"></span>
+          </h1>
+          <p class="hero__tagline">
+            MS CS student at Northeastern. I build machine learning systems,
+            data pipelines, and distributed systems, and I like making complex
+            things explainable.
+          </p>
+          <p class="status">
+            <span class="status__dot" aria-hidden="true"></span>
+            currently: seeking co-op roles
+          </p>
+          <div class="hero__actions">
+            <a class="button button--primary" href="projects.html"
+              >View my projects</a
+            >
+            <a class="button button--secondary" href="#journey"
+              >Read my git log</a
+            >
+          </div>
+        </div>
+        <img
+          class="hero__photo"
+          src="images/profile.jpg"
+          alt="Portrait of Srujan Kothuri"
+          width="320"
+          height="320"
+        />
+      </section>
+
+      <section
+        class="section container"
+        id="about"
+        aria-labelledby="about-title"
+      >
+        <h2 class="section-heading" id="about-title">
+          <span class="visually-hidden">About</span>
+          <span aria-hidden="true"
+            ><span class="section-heading__path">~/about</span> $ cat
+            README.md</span
+          >
+        </h2>
+        <div class="about">
+          <p>
+            I'm a Master's student in Computer Science at Northeastern
+            University in Boston. I got hooked on programming in 9th grade with
+            a Java calculator, and I haven't stopped building since, from legal
+            AI research in Bangalore to teaching systems programming to 230
+            students.
+          </p>
+          <p>
+            Outside of code, you'll probably find me at AMC watching a movie, or
+            at Boston Common.
+          </p>
+          <p>
+            <a class="text-link" href="beyond-code.html"
+              >More about me beyond code</a
+            >
+          </p>
+        </div>
+      </section>
+
+      <section
+        class="section container"
+        id="journey"
+        aria-labelledby="journey-title"
+      >
+        <h2 class="section-heading" id="journey-title">
+          <span class="visually-hidden">My journey</span>
+          <span aria-hidden="true"
+            ><span class="section-heading__path">~/journey</span> $ git log
+            --graph</span
+          >
+        </h2>
+        <p class="section__intro">
+          My story so far, as a commit history. Select any commit to see the
+          details.
+        </p>
+        <div class="journey" id="journey-graph">
+          <noscript>
+            <p class="section__intro">
+              The interactive journey needs JavaScript to be turned on.
+            </p>
+          </noscript>
+        </div>
+      </section>
+
+      <section
+        class="section container"
+        id="contact"
+        aria-labelledby="contact-title"
+      >
+        <h2 class="section-heading" id="contact-title">
+          <span class="visually-hidden">Contact</span>
+          <span aria-hidden="true"
+            ><span class="section-heading__path">~/contact</span> $ ping
+            srujan</span
+          >
+        </h2>
+        <p class="section__intro">
+          Want to talk about a project, research, or an opportunity? My inbox is
+          open.
+        </p>
+        <ul class="contact-links">
+          <li>
+            <a
+              class="button button--secondary"
+              href="mailto:srujan019@gmail.com"
+              >Email</a
+            >
+          </li>
+          <li>
+            <a
+              class="button button--secondary"
+              href="https://www.linkedin.com/in/srujankothuri"
+              target="_blank"
+              rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </li>
+          <li>
+            <a
+              class="button button--secondary"
+              href="https://github.com/srujankothuri"
+              target="_blank"
+              rel="noopener noreferrer"
+              >GitHub</a
+            >
+          </li>
+          <li>
+            <a
+              class="button button--secondary"
+              href="https://srujankothuri.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Portfolio</a
+            >
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p class="container">
+        © 2026 Srujan Kothuri · MIT License · Built with vanilla HTML, CSS, and
+        JavaScript
+      </p>
+    </footer>
+  </body>
+</html>

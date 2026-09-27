@@ -111,6 +111,27 @@ srujanhomepage/
     └── mockups/          # Wireframes for each page
 ```
 
+## Use of GenAI
+
+### Beyond Code page
+
+- **Tool and model:** Claude Opus 5.5 (Anthropic), used through claude.ai.
+- **What was generated:** `beyond-code.html`, `css/beyond-code.css`, and
+  `js/beyond-code.js`.
+- **Prompt:** a single detailed prompt specifying the page's content (my
+  movies, Boston, sports, hackathons, and quick stats), a four-column bento
+  layout with tablet and phone versions, the visual effects (glass tiles, a
+  cursor-following glow, a gradient heading, and scroll-reveal animations), and
+  every project rule: vanilla HTML, CSS, and ES6 modules only, no inline styles
+  or `!important`, semantic HTML, alt text, W3C and ESLint compliance, and
+  respect for reduced-motion settings.
+- **Changes after generation:**
+  - Fixed misaligned wrapped lines in list items by switching from a
+    hanging indent to a flexbox layout.
+  - Added a wider aspect ratio for the Boston photo on tablets, where the
+    full-width tile made it too tall.
+  - Updated the photo's alt text to describe my actual photo.
+
 ## Design Document
 
 The design document, including the project description, user personas, user stories, and mockups, is in [`docs/design-document.md`](docs/design-document.md).

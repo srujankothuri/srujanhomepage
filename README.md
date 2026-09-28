@@ -121,6 +121,7 @@ srujanhomepage/
 ```
 
 ## Use of GenAI
+I created the first two webpages myself, I used AI only for the third page as we needed to make one AI generated page, Beyond Code Page, Below are the details corresponding to it.
 
 ### Beyond Code page
 

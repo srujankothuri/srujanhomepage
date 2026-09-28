@@ -21,6 +21,15 @@ Create a personal homepage that introduces me as a person and a developer: my ba
 
 The site's creative component is my life journey rendered as an **interactive git commit graph**. Each milestone, from my first Java program in 2017 to my MS at Northeastern, is a commit on one of four branches (`main`, `work`, `research`, and `personal`). Visitors can select any commit to read its details, styled like the output of `git show`.
 
+## Creative Component
+
+**What:** my life journey rendered as an interactive git commit graph.
+
+**Where:** the Journey section of the Home page (`index.html`). The milestone
+data is in `js/commits.js`, and `js/journey.js` draws the graph and handles
+selection and keyboard navigation.
+
+
 ## Screenshot
 
 ![Home page of the site, showing the hero section with my name and profile photo](images/screenshot.webp)
